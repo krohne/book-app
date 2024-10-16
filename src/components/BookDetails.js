@@ -12,9 +12,13 @@ const BookDetails = () => {
     return (
         <div className="book-details">
             <h2>{bookDetails.name}</h2>
-            <p><strong>Author:</strong> {bookDetails.authors?.join(', ')}</p>
-            <p><strong>Pages:</strong> {bookDetails.numberOfPages}</p>
-            <p><strong>ISBN:</strong> {bookDetails.isbn}</p>
+            <p><strong>Author:</strong> {bookDetails.authors[0]}</p>
+            {Object.keys(bookDetails).map((val, k) => {
+                    return Array.isArray(bookDetails[val]) ? (<p/>) : (
+                        <p><strong>{val}:</strong> {bookDetails[val]}</p>
+                    )
+                    })
+                }
         </div>
     );
 };

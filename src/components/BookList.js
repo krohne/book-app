@@ -20,7 +20,7 @@ const BookList = () => {
             <h1>Book List</h1>
             <ul>
                 {books.map( (book, index) => (
-                    <li key={book.id} onClick={() => handleBookClick(index+1)}>
+                    <li key={index+1} onClick={() => handleBookClick(index+1)}>
                         <h2>{book.name}</h2>
                         <p>by {book.authors?.join(', ')}</p>
                     </li>
